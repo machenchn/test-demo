@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>myVue</title>
+    </head>
+    <body>
+        <div id="app">
+            <form>
+                <input type="text"  v-model="number">
+                <button type="button" v-click="increment">增加</button>
+            </form>
+            <h3 v-bind="number"></h3>
+            <form>
+                <input type="text"  v-model="count">
+                <button type="button" v-click="incre">增加</button>
+            </form>
+            <h3 v-bind="count"></h3>
+        </div>         
+        <script type="text/javascript" src="index.js"></script>
+        <script>
+            window.onload = function() {
+                var app = new myVue({
+                    el:'#app',
+                    data: {
+                        number: 0,
+                        count: 0,
+                    },
+                    methods: {
+                        increment: function() {
+                            this.number ++;
+                        },
+                        incre: function() {
+                            this.count ++;
+                        }
+                    }
+                })
+            }
+        </script>
+    </body>
+</html>
